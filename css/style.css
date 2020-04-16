@@ -1,0 +1,384 @@
+h1 {
+    position: fixed;
+    color: black;
+    background-color: rgba(163, 154, 154, 0.7);
+    margin-left: 35%;
+    margin-top: 0.1%;
+    z-index: 2;
+}
+
+body {
+    background-color: rgba(173, 170, 170, 0.7);
+    width: 100%;
+    height: 100%;
+    margin: 5px;
+    font-family: "Helvetica Neue", Arial, Helveticam sans-serif;
+}
+
+#map {
+    height: 98%;
+    width: 98%;
+    left: 1%;
+    overflow: hidden;
+    position: fixed;
+    border: 1px #444 solid;
+}
+
+.legend {
+    line-height: 18px;
+    color: #555;
+}
+
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+
+
+/* test from codepen */
+
+.text-center {
+    text-align: center;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.dflex {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu {
+    position: fixed;
+    z-index: 999;
+    right: 0;
+    width: 250px;
+    height: 100vh;
+    padding: 15px 0;
+    justify-content: space-between;
+    transition: right 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.menu .animation,
+.menu .element {
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    animation: scale-to-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.menu #logoCSS3,
+.menu .element {
+    z-index: 1;
+}
+
+.menu,
+.menu html,
+.menu body {
+    overflow-x: hidden;
+}
+
+.menu .element,
+.menu .menu-btn {
+    cursor: pointer;
+}
+
+.menu,
+.menu #logoCSS3,
+.menu .element,
+.menu .menu-btn {
+    color: #fff;
+}
+
+.menu #logoCSS3,
+.menu .element,
+.menu .menu-container-btn,
+.menu .menu-toggle-btn {
+    position: relative;
+}
+
+.menu .menu-btn,
+.menu .menu-toggle-btn:after,
+.menu .menu-toggle-btn:before {
+    position: absolute;
+}
+
+.menu .fa-bars {
+    display: none;
+}
+
+.menu .fa-close {
+    display: block;
+}
+
+.menu #logoCSS3,
+.menu .elements-container {
+    padding: 0 10px 0 25px;
+}
+
+.menu #logoCSS3 {
+    font-size: 4em;
+    max-width: 250px;
+}
+
+.menu .elements-container {
+    max-height: 47vh;
+    overflow-y: auto;
+}
+
+.menu .elements-container .element {
+    text-decoration: none;
+    padding: 10px 0 10px 10px;
+}
+
+.menu .elements-container .element:hover {
+    background-color: #000000;
+}
+
+.menu .menu-container-btn {
+    overflow: hidden;
+    width: 70px;
+    padding: 35px 0;
+    box-shadow: 609px 0 0 600px #000000;
+}
+
+.menu .menu-container-btn .menu-toggle-btn {
+    height: 70px;
+    border-radius: 0 50% 50% 0;
+    box-shadow: 43px 0 0 0 #000000;
+}
+
+.menu .menu-container-btn .menu-toggle-btn:after,
+.menu .menu-container-btn .menu-toggle-btn:before {
+    z-index: -1;
+    width: 100%;
+    height: 50px;
+    left: 0;
+    content: ' ';
+}
+
+.menu .menu-container-btn .menu-toggle-btn:after {
+    top: 0;
+    border-radius: 0 0 0 100%;
+    box-shadow: 8px -43px 0px 0px #000000;
+}
+
+.menu .menu-container-btn .menu-toggle-btn:before {
+    bottom: -86px;
+    border-radius: 100% 0 0 0;
+    box-shadow: 8px -43px 0px 0px #000000;
+}
+
+.menu .menu-container-btn .menu-toggle-btn .menu-btn {
+    text-shadow: 0 0 5px black;
+    padding: 14px 16px;
+    left: 14px;
+    top: 13px;
+    background-color: #000000;
+    border: none;
+    border-radius: 50%;
+}
+
+#menu-toggle:checked+.menu {
+    right: -185px;
+}
+
+#menu-toggle:checked+.menu #logoCSS3,
+#menu-toggle:checked+.menu .elements-container {
+    padding: 0 25px 0 65px;
+}
+
+#menu-toggle:checked+.menu .fa-close {
+    display: none;
+}
+
+#menu-toggle:checked+.menu .fa-bars {
+    display: block;
+}
+
+#menu-toggle:checked+.menu .animation,
+#menu-toggle:checked+.menu .element {
+    animation: none;
+    opacity: 0;
+}
+
+#menu-toggle:checked+.menu .menu-container-btn {
+    box-shadow: 640px 0 0 600px #000000;
+}
+
+#menu-toggle:checked+.menu .menu-container-btn .menu-toggle-btn {
+    border-radius: 50% 0 0 50%;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 55%, #000000 56%, #000000 100%);
+    box-shadow: 76px 0 0 50px #000000;
+}
+
+#menu-toggle:checked+.menu .menu-container-btn .menu-toggle-btn:after,
+#menu-toggle:checked+.menu .menu-container-btn .menu-toggle-btn:before {
+    left: 21px;
+    width: 20px;
+}
+
+#menu-toggle:checked+.menu .menu-container-btn .menu-toggle-btn:after {
+    top: -48px;
+    border-radius: 0 0 100% 0;
+    box-shadow: 12px 1px 0 10px #000000;
+}
+
+#menu-toggle:checked+.menu .menu-container-btn .menu-toggle-btn:before {
+    top: 68px;
+    border-radius: 0 100% 0 0;
+    box-shadow: 12px 3px 0 12px #000000;
+}
+
+#menu-toggle:checked+.menu .menu-container-btn .menu-toggle-btn .menu-btn {
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 12px #000000;
+}
+
+@keyframes scale-to-right {
+    0% {
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+
+.element:nth-child(1n) {
+    animation-delay: 0.25s;
+}
+
+.element:nth-child(2n) {
+    animation-delay: 0.5s;
+}
+
+.element:nth-child(3n) {
+    animation-delay: 0.75s;
+}
+
+.element:nth-child(4n) {
+    animation-delay: 1s;
+}
+
+.element:nth-child(5n) {
+    animation-delay: 1.25s;
+}
+
+.element:nth-child(6n) {
+    animation-delay: 1.5s;
+}
+
+.element:nth-child(7n) {
+    animation-delay: 1.75s;
+}
+
+.element:nth-child(8n) {
+    animation-delay: 2s;
+}
+
+.element:nth-child(9n) {
+    animation-delay: 2.25s;
+}
+
+.element:nth-child(10n) {
+    animation-delay: 2.5s;
+}
+
+
+/* POPUP style code */
+
+.box {
+    width: 40%;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 35px;
+    border: 2px solid #fff;
+    border-radius: 20px/50px;
+    background-clip: padding-box;
+    text-align: center;
+}
+
+.button {
+    font-size: 1em;
+    padding: 10px;
+    color: #fff;
+    border: 2px solid #06D85F;
+    border-radius: 20px/50px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.button:hover {
+    background: #06D85F;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.popup .close:hover {
+    color: #06D85F;
+}
+
+.popup .content {
+    max-height: 30%;
+    overflow: auto;
+}
+
+@media screen and (max-width: 700px) {
+    .box {
+        width: 70%;
+    }
+    .popup {
+        width: 70%;
+    }
+}

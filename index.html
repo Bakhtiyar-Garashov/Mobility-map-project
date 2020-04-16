@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Spatial & Social Mobility</title>
+
+    <!--link to stylesheet-->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- link to leaflet stylesheet-->
+    <link rel="stylesheet" href="css/leaflet.css">
+
+    <!--FONTAWESOME-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <!--the sequence of elements called matters!-->
+    <!-- title of your map-->
+    <h1> Spatial and Social Mobility </h1>
+    <input type="checkbox" id="menu-toggle" checked>
+    <div class="menu dflex">
+        <div id="logoCSS3" class="text-center">
+            <p style="font-size: 30px">Bakhtiyar Garashov</p>
+            <p style="font-size: 14px">bakhtiyar.garashov@ut.ee</p>
+        </div>
+        <div class="elements-container dflex">
+
+            <a class="element" href="#turkey">
+                Turkey
+            </a>
+            <a class="element" href="#georgia">
+                Georgia
+            </a>
+            <a class="element" href="#estonia">
+                Estonia
+            </a>
+        </div>
+        <div class="menu-container-btn">
+            <div class="menu-toggle-btn">
+                <label class="menu-btn text-center" for="menu-toggle">
+          <i class="fa fa-close"></i>
+          <i class="fa fa-bars"></i>
+        </label>
+            </div>
+        </div>
+    </div>
+    <!-- division div for the map -->
+    <div id="map"></div>
+
+    <!--POPUP text windows-->
+
+
+    <div id="turkey" class="overlay">
+        <div class="popup">
+            <h2>Azerbaijan to Turkey</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+                Spatial Mobility Type: Travel/Tourism <br> Social Mobility Type: No Social Mobility<br> Description: In mid-summer 2019, I went to Turkey (Istanbul) for travel purpose.
+            </div>
+        </div>
+    </div>
+
+    <div id="georgia" class="overlay">
+        <div class="popup">
+            <h2>Azerbaijan to Georgia</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+                Spatial Mobility Type: Travel/Tourism <br> Social Mobility Type: No Social Mobility <br> Description: In June 2019, I visited to Tbilisi and Kutaisi in Georgia. Actual travel reason was to visit Estonian embassy in Tbilisi in order to
+                apply long-term visa for my study.
+            </div>
+        </div>
+    </div>
+
+    <div id="estonia" class="overlay">
+        <div class="popup">
+            <h2>Azerbaijan to Estonia</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+                Spatial Mobility Type: Migration <br> Social Mobility Type: Horizontal Mobility <br> Description: In early 2019, I wanted to start with my master's degree right after my bachelor's degree study in Azerbaijan, Baku and I got admission from
+                University of Tartu. Thus, in August 2019, I left my country for a new opportunity.
+            </div>
+        </div>
+    </div>
+
+    <!-- link to leaflet javascript library-->
+    <script src="js/leaflet-src.js"></script>
+
+    <!--link to the files that contains geoJson data with javascript-->
+    <script src="data/point.js" type="text/javascript">
+    </script>
+    <script src="data/country.js" type="text/javascript">
+    </script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
+
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+
+    <!-- Load animation tweening library requirement for CanvasFlowMapLayer -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.6.0/Tween.min.js"></script>
+
+    <!-- then load CanvasFlowMapLayer -->
+    <script src="data/CanvasFlowmapLayer.js"></script>
+
+
+    <!-- link to main javascript file -->
+    <script src="js/main.js"></script>
+
+</body>
+<html>
